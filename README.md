@@ -1,0 +1,1 @@
+# talkdesk-js-class
