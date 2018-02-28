@@ -103,4 +103,4 @@ render();
 ```
 
 
-Using this data and the initial markup from [step 0](./00-what-we-want.md), we can generate 
+Using this data and the initial markup from [step 0](./00-introduction.md), we can generate 

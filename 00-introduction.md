@@ -176,7 +176,7 @@ Finally, we should also be able to remove any task from our list, so we also nee
 }
 ```
  
- And that's it. This is how we need our application to look. There is already some interactivity we achieved with CSS, but we need this list to be dynamic:
+ This is how we need our application to look. There is already some interactivity with CSS alone, but we need this list to be dynamic:
  - A new task should be added when hitting \<Enter\>.
  - Clicking on a task should mark it as done.
  - Clicking on the remove symbol should remove the task.
