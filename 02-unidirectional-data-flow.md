@@ -1,6 +1,6 @@
 # 2. Unidirectional data flow
 
-Instead of jumping straight to handling DOM element, let's keep the data of our application in a separate object. For now we'll have some sample todos.
+Instead of jumping straight to DOM manipulation, let's keep the data of our application in a separate object. For now we'll have some sample todos.
 
 ```js
 const model = {
@@ -12,7 +12,7 @@ const model = {
 }
 ```
 
-Using this data model, along with our sample markup from [step 0](./what-we-want.md) and some template string replacements, we can render the entire application using `innerHTML` to set the entire HTML content of our root node.
+Using this data model, along with our sample markup from [step 0](./00-introduction.md) and some template string replacements, we can render the entire application using `innerHTML` to set the entire HTML content of our root node.
 ```html
 <div id="root"></div>
 ```
@@ -48,7 +48,7 @@ function render() {
 render();
 ```
 
-This means that we can how define operations over our data without having to deal with the DOM, and call `render` when we need to rebuild the view. Note we now have a unique `id` for every todo, so they can be easily referenced in `toggle` and `remove` operations.
+This means that we can how define operations over our data without having to deal with DOM nodes, and call `render` only when we need to rebuild the view. Note we now have a unique `id` for every todo, so they can be easily referenced in `toggle` and `remove` operations.
 
 ```js
 const model = {
@@ -97,10 +97,8 @@ render();
       +-----+   EVENTS   <-----+
       |     +------------+     |
       |                        |
+      |                        |
 +-----v----+              +----+-----+
 |   DATA   +-------------->   VIEW   |
 +----------+              +----------+
 ```
-
-
-Using this data and the initial markup from [step 0](./00-introduction.md), we can generate 
