@@ -182,4 +182,4 @@ Finally, we should also be able to remove any task from our list, so we also nee
  - Clicking on the remove symbol should remove the task.
  - We might even have time to save and load tasks from a server.
 
-If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-00](https://stackblitz.com/edit/talkdesk-js-class-00?file=index.html).
+If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-00](https://stackblitz.com/edit/talkdesk-js-class-00?file=index.html). In the [next step](./01-dynamic-dom-manipulation.md) we're going to do some dynamic DOM manipulation.
