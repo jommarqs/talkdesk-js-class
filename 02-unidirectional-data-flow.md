@@ -12,7 +12,7 @@ const model = {
 }
 ```
 
-Using this data model, along with our sample markup from [step 0](./00-introduction.md) and some template string replacements, we can render the entire application using `innerHTML` to set the entire HTML content of our root node.
+Using this data model, along with our sample markup from [step 0](./00-introduction.md) and some template string replacements, we can render the entire application by setting the `innerHTML` of our root node.
 ```html
 <div id="root"></div>
 ```
@@ -69,7 +69,7 @@ function addTodo(description) {
 function toggleTodo(id) {
   model.todos = model.todos.map(todo => {
     if (todo.id !== id) {
-      return todo
+      return todo;
     }
     return { id: todo.id, description: todo.description, done: !todo.done };
   });
