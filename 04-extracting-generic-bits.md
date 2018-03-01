@@ -2,7 +2,7 @@
 
 It's a little anoying that every time we call a data manipulation method (_i.e._ `addTodo`, `toggleTodo` and `removeTodo`) we have to call `render`. This gives us that nice unidirectional data flow, but we have to do it ourselves, and we may forget to call it, and that may lead to bugs.
 
-So, let's introduce an `updateModel` method, that we can call every time we need to update our data.
+So, let's introduce an `updateModel` method, that we can call every time we need to update our data, instead of manipulating the `model` object directly.
 ```js
 updateModel(updated) {
   Object.assign(this.model, updated);
