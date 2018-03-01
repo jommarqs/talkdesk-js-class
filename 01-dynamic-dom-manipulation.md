@@ -93,8 +93,10 @@ And it's done! A _Todo List_ application in less than 50 lines of JavaScript :ta
 - There is no separation between data, logic and UI:
   - It's impossible to know the current state of the application without iterating through DOM nodes.
   - Doing changes to the logic will always involve messing with the DOM.
-  - What if we want to order items by sobre criteriadate?
+  - What if we want to order items alphabetically?
   - What if we want to clear all the items?
   - What if we want to save/restore all the items to/from a backend server?
+
+---
 
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-01](https://stackblitz.com/edit/talkdesk-js-class-01?file=index.js). But don't look for too long, we'll do it better in the [next step](./02-unidirectional-data-flow.md).

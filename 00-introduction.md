@@ -1,4 +1,4 @@
-# 0. What we want
+# 0. Introduction
 
 In this class we're building a _Todo List_ app. We're not going to bother much about markup and styling, but in the next few minutes I'll try to help you develop some sense of what we want to achieve.
 
@@ -181,5 +181,7 @@ Finally, we should also be able to remove any task from our list, so we also nee
  - Clicking on a task should mark it as done.
  - Clicking on the remove symbol should remove the task.
  - We might even have time to save and load tasks from a server.
+
+---
 
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-00](https://stackblitz.com/edit/talkdesk-js-class-00?file=index.html). In the [next step](./01-dynamic-dom-manipulation.md) we're going to do some dynamic DOM manipulation.

@@ -1,4 +1,4 @@
-# 2. Unidirectional data flow
+# 2. Unidirectional Data Flow
 
 Instead of jumping straight to DOM manipulation, let's keep the data of our application in a separate object. For now we'll have some sample todos.
 
@@ -91,15 +91,119 @@ removeTodo(learnHTML);
 render();
 ```
 
+When calling `render` we get a brand new DOM tree, so we have to attach event listeners to handle the input submission and todo item clicks, as we did before.
+A couple of things to note here:
+- We're adding some extra information to `.todo-item` nodes using `data-*` attributes, so we can identify the corresponding todo ID when the elements are clicked.
+- The `render` function is called again every time we do some data manipulation (_i.e._ when calling `addTodo`, `removeTodo` or `toggleTodo`).
+```js
+function handleInputChange(event) {
+  const value = event.target.value;
+  if (event.key === 'Enter' && value !== '') {
+    addTodo(event.target.value);
+    render();
+  }
+}
 
+function handleDescriptionClick(event) {
+  const todoElement = event.target.parentNode;
+  // Convert `dataset.key` string to a number
+  const id = Number.parseInt(todoElement.dataset.key);
+  toggleTodo(id);
+  render();
+}
+
+function handleRemoveClick(event) {
+  const todoElement = event.target.parentNode;
+  const id = Number.parseInt(todoElement.dataset.key);
+  removeTodo(id);
+  render();
+}
+
+function render() {
+  // re-create DOM from model data
+  rootElement.innerHTML = `
+    ...
+        <li class="${classes}" data-key="${todo.id}">
+    ...
+  `
+
+  // add event listeners
+  rootElement.querySelector('.add-todo')
+    .addEventListener('keypress', handleInputChange);
+
+  rootElement.querySelectorAll('.todo-item .description').forEach(element => {
+    element.addEventListener('click', handleDescriptionClick);
+  });
+
+  rootElement.querySelectorAll('.todo-item .remove').forEach(element => {
+    element.addEventListener('click', handleRemoveClick);
+  });
+}
+```
+
+And we're done. It's more code than the previous version, but we now have something that we can reason about:
+- We can manipulate data, logic and view independently.
+- It's easy to implement new features or change existing ones:
+  - Sort todos?
+    ```js
+    function sortTodos() {
+      model.todos.sort(...);
+    }
+
+    function handleSortButtonClick() {
+      sortTodos();
+      render();
+    }
+
+    function render() {
+      rootElement.innerHTML = `
+        ...
+        <button class="sort">sort</button>
+        ...
+      `;
+
+      rootElement.querySelector('.sort')
+        .addEventListener('click', handleSortButtonClick);
+    }
+    ```
+  - Load todos from server?
+    ```js
+    function loadTodos() {
+      return api.fetchTodos().then(todos => {
+        model.todos = todos;
+      });
+    }
+
+    function handleDocumentReady() {
+      loadTodos().then(render);
+    }
+
+    document.addEventListener('DOMContentLoaded', handleDocumentReady);
+    ```
+
+See the pattern?
+- Interacting with the view triggers events.
+- Event handlers manipulate data.
+- Every time the data is changed, we also re-render the view.
+- And the cycle continues...
 ```
             ┌────────────┐
       ╭─────┤   EVENTS   ◀─────╮
       │     └────────────┘     │
       │                        │
 ┌─────▼────╮              ┌────┴─────┐
-|   DATA   |              |   VIEW   |
+|   DATA   |              |   VIEW   | 
 └─────┬────┘              └────▲─────┘
       │                        │
       ╰────────────────────────╯
 ```
+
+---
+
+## Exercise
+Implement _Clear all todos_:
+- Add a "clear" button.
+- When clicking the button, all the existing todos should be removed.
+
+---
+If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-02](https://stackblitz.com/edit/talkdesk-js-class-02?file=index.js). In the [next step](./03-creating-reusable-component.md) we'll create a reusable component out of this app.
