@@ -188,3 +188,4 @@ And we have to stop here, because you may not realize it, but you just learned n
 
 ---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-04](https://stackblitz.com/edit/talkdesk-js-class-04?file=index.js).
+In the [next step](./05-porting-to-react.md) we'll port our application to [React](https://reactjs.org/), using the concepts that we learned so far.
