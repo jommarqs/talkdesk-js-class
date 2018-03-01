@@ -60,6 +60,10 @@ We need some way to add new todos, like a text field.
 </div>
 ```
 ```css
+.todos {
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+}
+
 .add-todo {
   width: 100%;
   padding: 10px 20px;
@@ -86,6 +90,13 @@ And we need to show all those tasks in a list.
 </div>
 ```
 ```css
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+}
+
 .todo-item {
   background-color: #222831;
   color: white;
