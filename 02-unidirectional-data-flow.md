@@ -48,7 +48,7 @@ function render() {
 render();
 ```
 
-This means that we can how define operations over our data without having to deal with DOM nodes, and call `render` only when we need to rebuild the view. Note we now have a unique `id` for every todo, so they can be easily referenced in `toggleTodo` and `removeTodo` operations.
+This means that we can now define operations over our data without having to deal with DOM nodes, and call `render` only when we need to rebuild the view. Note we now have a unique `id` for every todo, so they can be easily referenced in `toggleTodo` and `removeTodo` operations.
 
 ```js
 const model = {

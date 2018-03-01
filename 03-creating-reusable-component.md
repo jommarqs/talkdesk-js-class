@@ -134,4 +134,4 @@ new TodoApp(document.getElementById('root-3'));
 Make the title of each todo app customizable, se we can do something like `new TodoApp(root, 'JavaScript Todos')`.
 
 ---
-If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-03](https://stackblitz.com/edit/talkdesk-js-class-03?file=index.js). In the [next step](./04-extracting-generic-parts.md) we'll do a some improvements and extract the generic bits.
+If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-03](https://stackblitz.com/edit/talkdesk-js-class-03?file=index.js). In the [next step](./04-extracting-generic-bits.md) we'll do a some improvements and extract the generic bits.
