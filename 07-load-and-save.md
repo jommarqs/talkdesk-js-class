@@ -1,4 +1,4 @@
-# 7. Load and Save Todos
+# 7. Loading and Saving Todos
 
 TODO
 
