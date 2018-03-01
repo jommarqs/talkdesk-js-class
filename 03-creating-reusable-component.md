@@ -99,7 +99,7 @@ class TodoApp {
 }
 ```
 
-There is only a small edge case that we need to handle here. The methods we're passing to event handlers will be effectly run outside the instance context. This means that, during execution, the `this` keyword will not be app instance. To fix this, we need to explicitly `bind` these handlers to the app. We can do it in the constructor, before calling `render`.
+There is only a small edge case that we need to handle here. The methods we're passing to event handlers will be actually run outside the instance context. This means that, during execution, the `this` keyword will not be app instance. To fix this, we need to explicitly `bind` these handlers to the app. We can do it in the constructor, before calling `render`.
 ```js
   constructor(rootElement) {
     this.model = {
