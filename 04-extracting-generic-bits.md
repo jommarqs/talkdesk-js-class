@@ -144,6 +144,8 @@ class BaseApp {
     this.render();
   }
 }
+
+export { BaseApp };
 ```
 
 ```js
