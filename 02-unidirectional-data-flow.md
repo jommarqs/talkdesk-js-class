@@ -5,11 +5,11 @@ Instead of jumping straight to DOM manipulation, let's keep the data of our appl
 ```js
 const model = {
   todos: [
-      { description: 'Learn HTML', done: true },
-      { description: 'Learn CSS', done: true },
-      { description: 'Learn JavaScript', done: false },
-    ]
-}
+    { description: 'Learn HTML', done: true },
+    { description: 'Learn CSS', done: true },
+    { description: 'Learn JavaScript', done: false },
+  ]
+};
 ```
 
 Using this data model, along with our sample markup from [step 0](./00-introduction.md) and some template string replacements, we can render the entire application by setting the `innerHTML` of our root node.
@@ -54,7 +54,7 @@ This means that we can now define operations over our data without having to dea
 const model = {
   todos: [],
   idCounter: 0
-}
+};
 
 function addTodo(description) {
   model.idCounter++;
@@ -202,8 +202,8 @@ See the pattern?
 
 ## Exercise
 Implement _Clear all todos_:
-- Add a "clear" button.
-- When clicking the button, all the existing todos should be removed.
+- Add a "clear" button or icon.
+- On click, all the existing todos should be removed.
 
 ---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-02](https://stackblitz.com/edit/talkdesk-js-class-02?file=index.js). In the [next step](./03-creating-reusable-component.md) we'll create a reusable component out of this app.
