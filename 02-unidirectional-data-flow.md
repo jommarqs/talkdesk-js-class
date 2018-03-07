@@ -182,9 +182,10 @@ And we're done. It's more code than the previous version, but we now have someth
     ```
 
 See the pattern?
+- The initial view is derived from data.
 - Interacting with the view triggers events.
 - Event handlers manipulate data.
-- Every time the data is changed, we also re-render the view.
+- Data manipulation is followed by re-rendering the view.
 - And the cycle continues...
 ```
             ┌────────────┐
