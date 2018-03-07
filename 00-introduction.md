@@ -5,8 +5,8 @@ In this class we're building a _Todo List_ app. We're not going to bother much a
 So, we want a _Todo_ application.
 ```html
 <div id="root">
-    <div class="todo-app">
-    </div>
+	<div class="todo-app">
+	</div>
 </div>
 ```
 ```css
@@ -30,9 +30,9 @@ body {
 We can call it _"todos"_.
 ```html
 <div id="root">
-    <div class="todo-app">
-      <h1 class="title">todos</h1>
-    </div>
+	<div class="todo-app">
+		<h1 class="title">todos</h1>
+	</div>
 </div>
 ````
 ```css
@@ -48,12 +48,12 @@ We can call it _"todos"_.
 We need some way to add new todos, so we can use a text field.
 ```html
 <div id="root">
-    <div class="todo-app">
-      <h1 class="title">todos</h1>
-      <div class="todos">
-        <input class="add-todo" type="text" placeholder="Add new todo" />
-      </div>
-    </div>
+	<div class="todo-app">
+		<h1 class="title">todos</h1>
+		<div class="todos">
+			<input class="add-todo" type="text" placeholder="Add new todo" />
+		</div>
+	</div>
 </div>
 ```
 ```css
@@ -73,17 +73,23 @@ We need some way to add new todos, so we can use a text field.
 And we also have to show all those tasks in a list.
 ```html
 <div id="root">
-    <div class="todo-app">
-      <h1 class="title">todos</h1>
-      <div class="todos">
-        <input class="add-todo" type="text" placeholder="Add new todo" />
-        <ul class="todo-list">
-          <li class="todo-item">
-            <span class="description">Learn JS</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+	<div class="todo-app">
+		<h1 class="title">todos</h1>
+		<div class="todos">
+			<input class="add-todo" type="text" placeholder="Add new todo" />
+			<ul class="todo-list">
+				<li class="todo-item">
+					<span class="description">Learn JS</span>
+				</li>
+				<li class="todo-item">
+					<span class="description">Learn HTML</span>
+				</li>
+				<li class="todo-item">
+					<span class="description">Learn CSS</span>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 ```
 ```css
@@ -118,23 +124,23 @@ And we also have to show all those tasks in a list.
 Also, we'll need to be able to mark the tasks as complete.
 ```html
 <div id="root">
-    <div class="todo-app">
-      <h1 class="title">todos</h1>
-      <div class="todos">
-        <input class="add-todo" type="text" placeholder="Add new todo" />
-        <ul class="todo-list">
-          <li class="todo-item">
-            <span class="description">Learn JS</span>
-          </li>
-          <li class="todo-item done">
-            <span class="description">Learn HTML</span>
-          </li>
-          <li class="todo-item done">
-            <span class="description">Learn CSS</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+	<div class="todo-app">
+		<h1 class="title">todos</h1>
+		<div class="todos">
+			<input class="add-todo" type="text" placeholder="Add new todo" />
+			<ul class="todo-list">
+				<li class="todo-item">
+					<span class="description">Learn JS</span>
+				</li>
+				<li class="todo-item done">
+					<span class="description">Learn HTML</span>
+				</li>
+				<li class="todo-item done">
+					<span class="description">Learn CSS</span>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 ```
 ```css
@@ -147,26 +153,26 @@ Also, we'll need to be able to mark the tasks as complete.
 Finally, we should also be able to remove any task from the list, so we'll add an _✖ button_.
 ```html
 <div id="root">
-    <div class="todo-app">
-      <h1 class="title">todos</h1>
-      <div class="todos">
-        <input class="add-todo" type="text" placeholder="Add new todo" />
-        <ul class="todo-list">
-          <li class="todo-item">
-            <span class="description">Learn JS</span>
-            <span class="remove">&#x2716</span>
-          </li>
-          <li class="todo-item done">
-            <span class="description">Learn HTML</span>
-            <span class="remove">&#x2716</span>
-          </li>
-          <li class="todo-item done">
-            <span class="description">Learn CSS</span>
-            <span class="remove">&#x2716</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+	<div class="todo-app">
+		<h1 class="title">todos</h1>
+		<div class="todos">
+			<input class="add-todo" type="text" placeholder="Add new todo" />
+			<ul class="todo-list">
+				<li class="todo-item">
+					<span class="description">Learn JS</span>
+					<span class="remove">&#x2716</span>
+				</li>
+				<li class="todo-item done">
+					<span class="description">Learn HTML</span>
+					<span class="remove">&#x2716</span>
+				</li>
+				<li class="todo-item done">
+					<span class="description">Learn CSS</span>
+					<span class="remove">&#x2716</span>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 ```
 ```css
