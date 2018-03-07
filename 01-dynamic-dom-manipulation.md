@@ -17,7 +17,7 @@ Looking at our HTML, it looks like only the list should be dynamic, so we can ke
 
 Given that we're now constructing a dynamic list, we should first get a reference to the list container.
 ```js
-const rootElement = document.querySelector('.todo-app');
+const rootElement = document.getElementById('root');
 const list = rootElement.querySelector('.todo-list');
 ```
 
