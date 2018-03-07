@@ -190,7 +190,8 @@ And this is how our application will look. There is already some interactivity w
  - Clicking on the remove symbol should remove the task.
  - We might even have time to save and load tasks from a server.
 
-In the next steps we'll be constructing this dynamic application. First in pure JavaScript, successively building up concepts and tools; up to the point we know enough to do it in a framework like React.
+In the next steps we'll be constructing this dynamic application. We'll start in pure JavaScript, and successively build up concepts and tools; up to the point we know enough to do it in a framework like React.
+
 It's not important if you don't pick up all the language syntax, features and nuances. Instead, I want you to focus on the rationale and motivation for each successive step or refactor.
 
 ---
