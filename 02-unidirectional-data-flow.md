@@ -143,6 +143,8 @@ function render() {
 
 And we're done. It's more code than the previous version, but we now have something that we can reason about:
 - We can manipulate data, logic and view independently.
+  - We wan send our todos to a server without changing `render` or event the handlers.
+  - We can replace our HTML and CSS with canvas without touching the data or related functions.
 - It's easy to implement new features or change existing ones:
   - Sort todos?
     ```js
