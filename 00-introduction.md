@@ -160,15 +160,15 @@ Finally, we should also be able to remove any task from the list, so we'll add a
       <ul class="todo-list">
         <li class="todo-item">
           <span class="description">Learn JS</span>
-          <span class="remove">&#x2716</span>
+          <span class="remove">&#x2716;</span>
         </li>
         <li class="todo-item done">
           <span class="description">Learn HTML</span>
-          <span class="remove">&#x2716</span>
+          <span class="remove">&#x2716;</span>
         </li>
         <li class="todo-item done">
           <span class="description">Learn CSS</span>
-          <span class="remove">&#x2716</span>
+          <span class="remove">&#x2716;</span>
         </li>
       </ul>
     </div>
