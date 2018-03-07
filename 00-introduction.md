@@ -1,9 +1,8 @@
 # 0. Introduction
 
-In this class we're building a _Todo List_ app. We're not going to bother much about markup and styling, but in the next few minutes I'll try to help you develop some sense of what we want to achieve.
+In this class we're building a _Todo List_ app. We're not going to bother much about markup and styling, but in the next few minutes I'll try to help you develop a sense of how we want our final app to behave.
 
 So, we want a _Todo_ application.
-
 ```html
 <div id="root">
     <div class="todo-app">
@@ -29,7 +28,6 @@ body {
 ```
 
 We can call it _"todos"_.
-
 ```html
 <div id="root">
     <div class="todo-app">
@@ -47,8 +45,7 @@ We can call it _"todos"_.
 }
 ```
 
-We need some way to add new todos, like a text field.
-
+We need some way to add new todos, so we can use a text field.
 ```html
 <div id="root">
     <div class="todo-app">
@@ -73,7 +70,7 @@ We need some way to add new todos, like a text field.
 }
 ```
 
-And we need to show all those tasks in a list.
+And we also have to show all those tasks in a list.
 ```html
 <div id="root">
     <div class="todo-app">
@@ -118,7 +115,7 @@ And we need to show all those tasks in a list.
 }
 ```
 
-As in any todo list, we'll also have to be able to mark the tasks as completed.
+Also, we'll need to be able to mark the tasks as complete.
 ```html
 <div id="root">
     <div class="todo-app">
@@ -147,7 +144,7 @@ As in any todo list, we'll also have to be able to mark the tasks as completed.
 }
 ```
 
-Finally, we should also be able to remove any task from our list, so we also need some kind of _remove button_.
+Finally, we should also be able to remove any task from the list, so we'll add an _✖ button_.
 ```html
 <div id="root">
     <div class="todo-app">
@@ -187,11 +184,14 @@ Finally, we should also be able to remove any task from our list, so we also nee
 }
 ```
  
- This is how we need our application to look. There is already some interactivity with CSS alone, but we need this list to be dynamic:
+And this is how our application will look. There is already some interactivity with CSS alone, but we want this list to be dynamic:
  - A new task should be added when hitting \<Enter\>.
  - Clicking on a task should mark it as done.
  - Clicking on the remove symbol should remove the task.
  - We might even have time to save and load tasks from a server.
+
+In the next steps we'll be constructing this dynamic application. First in pure JavaScript, successively building up concepts and tools; up to the point we know enough to do it in a framework like React.
+It's not important if you don't pick up all the language syntax, features and nuances. Instead, I want you to focus on the rationale and motivation for each successive step or refactor.
 
 ---
 
