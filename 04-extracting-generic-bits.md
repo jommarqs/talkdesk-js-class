@@ -201,8 +201,9 @@ And we have to stop here, because you may not realize it, but you just learned n
   - So we can do something like `new TodoApp(root, 'JavaScript Todos')`.
 - Implement load and save using a [Firebase](https://firebase.google.com/) database.
   - Here's a public one https://talkdesk-js-class.firebaseio.com/
-  - Pick a unique name for your database location:
-  - Use it like this:
+  - Pick a unique name for your database location (as long as it ends in `.json`):
+    - I picked `todos.json`, choose anything else, otherwise you'll be rewriting my stuff.
+  - Use it like this:
     ```js
     // load
     fetch('https://talkdesk-js-class.firebaseio.com/todos.json')
