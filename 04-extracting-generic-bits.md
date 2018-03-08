@@ -192,5 +192,30 @@ The framework code is pretty small at the moment, but it's a framework nonethele
 And we have to stop here, because you may not realize it, but you just learned now [React](https://reactjs.org/) works.
 
 ---
+
+## Exercises
+- Implement _Clear all todos_:
+  - Add a "clear" button or icon.
+  - On click, all the existing todos should be removed.
+- Make the title of each todo app customizable:
+  - So we can do something like `new TodoApp(root, 'JavaScript Todos')`.
+- Implement load and save using a [Firebase](https://firebase.google.com/) database.
+  - Here's a public one https://talkdesk-js-class.firebaseio.com/
+  - Pick a unique name for your database location:
+  - Use it like this:
+    ```js
+    // load
+    fetch('https://talkdesk-js-class.firebaseio.com/todos.json')
+      .then(response => response.json())
+      .then(todos => todos || []);
+
+    // save
+    fetch(
+      'https://talkdesk-js-class.firebaseio.com/todos.json',
+      { method: 'PUT', body: JSON.stringify(this.model) }
+    );
+    ```
+
+---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-04](https://stackblitz.com/edit/talkdesk-js-class-04?file=index.js).
 In the [next step](./05-porting-to-react.md) we'll port our application to [React](https://reactjs.org/), using the concepts that we learned so far.
