@@ -204,7 +204,7 @@ See the pattern?
 ---
 
 ## Exercises
-1. Implement _Clear all todos_:
+- Implement _Clear all todos_:
   - Add a "clear" button or icon.
   - On click, all the existing todos should be removed.
 
