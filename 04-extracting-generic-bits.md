@@ -124,6 +124,8 @@ And we can digg a little further... Our next app may not be a _Todo List_, but w
 - Have a `model` object.
 - Have a `render` method.
 - Have an `updateModel` helper that enforces an _unidirectional data flow_.
+- Have a `rootElement` in which `render` creates DOM.
+- Have event handlers and bindings.
 
 So, if we extract these common bits... we might have just discovered a framework 🤔.
 
@@ -184,6 +186,7 @@ The framework code is pretty small at the moment, but it's a framework nonethele
 - Add lifecycle hooks that run before and after render.
 - Implement optimizations to avoid rendering the DOM every time.
 - Provide helpers to generate the view.
+- Simplify all the boilerplate of event handlers and bindings.
 - ...
 
 And we have to stop here, because you may not realize it, but you just learned now [React](https://reactjs.org/) works.
