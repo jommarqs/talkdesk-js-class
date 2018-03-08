@@ -199,7 +199,7 @@ And we have to stop here, because you may not realize it, but you just learned n
   - On click, all the existing todos should be removed.
 - Make the title of each todo app customizable:
   - So we can do something like `new TodoApp(root, 'JavaScript Todos')`.
-- Implement load and save using a [Firebase](https://firebase.google.com/) database.
+- Implement "load" and "save" using a [Firebase](https://firebase.google.com/) database.
   - Here's a public one [https://talkdesk-js-class.firebaseio.com/](https://talkdesk-js-class.firebaseio.com/):
   - Choose a unique name for your database location (as long as it ends in .json):
     - I picked `todos.json`, choose anything else, otherwise you'll be rewriting my stuff.
@@ -217,6 +217,8 @@ And we have to stop here, because you may not realize it, but you just learned n
       { method: 'PUT', body: JSON.stringify(this.model) }
     );
     ```
+- You may have noticed that all our todo lists interact with the same database. Like you did to customize the title, also add an id, which will be used for a specific list.
+  - _e.g._ `new TodoApp(root, 'JavaScript Todos', 'javascript')` will interact interact with `https://talkdesk-js-class.firebaseio.com/javascript.json`.
 
 ---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-04](https://stackblitz.com/edit/talkdesk-js-class-04?file=index.js).
