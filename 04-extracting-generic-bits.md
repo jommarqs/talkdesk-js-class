@@ -208,7 +208,8 @@ And we have to stop here, because you may not realize it, but you just learned n
     // load
     fetch('https://talkdesk-js-class.firebaseio.com/todos.json')
       .then(response => response.json())
-      .then(todos => todos || []);
+      .then(data => data || {});
+      .then(data => this.updateModel(data));
 
     // save
     fetch(
