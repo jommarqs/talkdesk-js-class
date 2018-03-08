@@ -2,7 +2,7 @@
 
 What if we want to have multiple todo lists? Let's create a reusable component! Basically, all we have to do is to encapsulate everything in a class:
 - Place `model` and `rootElement` in the constructor.
-- Transform all function in instance methods, and change all references and calls to `this.<ref>`.
+- Transform all function to instance methods, and change all references to `this.<ref>`.
 - Call `render` at the end of the constructor.
 
 ```js
@@ -99,7 +99,7 @@ class TodoApp {
 }
 ```
 
-There is only a small edge case that we need to handle here. The methods we're passing to event handlers will be actually run outside the instance context. This means that, during execution, the `this` keyword will not be app instance. To fix this, we need to explicitly `bind` these handlers to the app. We can do it in the constructor, before calling `render`.
+There is only a small edge case that we need to take care of. The methods we're passing to event handlers will be run outside the instance context. Meaning that during execution, the `this` keyword will not be app instance. To fix this, we need to explicitly `bind` these handlers to the app instance. We can do it in the constructor, before calling `render`.
 ```js
   constructor(rootElement) {
     this.model = {
@@ -130,8 +130,12 @@ new TodoApp(document.getElementById('root-3'));
 
 ---
 
-## Exercise
-Make the title of each todo app customizable, se we can do something like `new TodoApp(root, 'JavaScript Todos')`.
+## Exercises
+- Implement _Clear all todos_:
+  - Add a "clear" button or icon.
+  - On click, all the existing todos should be removed.
+- Make the title of each todo app customizable
+  - So we can do something like `new TodoApp(root, 'JavaScript Todos')`.
 
 ---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-03](https://stackblitz.com/edit/talkdesk-js-class-03?file=index.js). In the [next step](./04-extracting-generic-bits.md) we'll do a some improvements and extract the generic bits.
