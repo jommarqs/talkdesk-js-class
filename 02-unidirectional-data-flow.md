@@ -203,10 +203,10 @@ See the pattern?
 
 ---
 
-## Exercise
-Implement _Clear all todos_:
-- Add a "clear" button or icon.
-- On click, all the existing todos should be removed.
+## Exercises
+1. Implement _Clear all todos_:
+  - Add a "clear" button or icon.
+  - On click, all the existing todos should be removed.
 
 ---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-02](https://stackblitz.com/edit/talkdesk-js-class-02?file=index.js). In the [next step](./03-creating-reusable-component.md) we'll create a reusable component out of this app.
