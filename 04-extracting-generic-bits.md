@@ -218,7 +218,7 @@ And we have to stop here, because you may not realize it, but you just learned n
     );
     ```
 - You may have noticed that all our todo lists interact with the same database. Like you did to customize the title, also add an id, which will be used for a specific list.
-  - _e.g._ `new TodoApp(root, 'JavaScript Todos', 'javascript')` will interact interact with `https://talkdesk-js-class.firebaseio.com/javascript.json`.
+  - _e.g._ `new TodoApp(root, 'JavaScript Todos', 'javascript')` will interact interact with `https://talkdesk-js-class.firebaseio.com/javascript.json`.
 
 ---
 If you want to explore a bit more, the final code for this step is available at [https://stackblitz.com/edit/talkdesk-js-class-04](https://stackblitz.com/edit/talkdesk-js-class-04?file=index.js).
