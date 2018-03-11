@@ -310,11 +310,6 @@ And we must stop here... You may not realize it, but you just learned now [React
 ---
 
 ## Exercises
-- Implement _Clear all todos_:
-  - Add a "clear" button or icon.
-  - On click, all the existing todos should be removed.
-- Make the title of each todo app customizable:
-  - So we can do something like `new TodoApp(root, 'JavaScript Todos')`.
 - Implement "load" and "save" using a [Firebase](https://firebase.google.com/) database.
   - Here's a public one [https://talkdesk-js-class.firebaseio.com/](https://talkdesk-js-class.firebaseio.com/):
   - Choose a unique name for your database location (as long as it ends in .json):
