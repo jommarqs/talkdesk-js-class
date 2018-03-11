@@ -1,6 +1,6 @@
 # 4. Extracting Generic Bits
 
-It's a little anoying that every time we call a data manipulation method (_i.e._ `addTodo`, `toggleTodo` and `removeTodo`) we have to call `render`. This gives us that nice unidirectional data flow, but we have to do it ourselves, and we may forget to call it, and that may lead to bugs.
+It's a little annoying that every time we call a data manipulation method (_i.e._ `addTodo`, `toggleTodo` and `removeTodo`) we have to call `render`. This gives us that nice unidirectional data flow, but we have to do it ourselves, and we may forget to call it, and that may lead to bugs.
 
 So, let's introduce an `updateModel` method, that we can call every time we need to update our data, instead of manipulating the `model` object directly.
 ```js
@@ -131,8 +131,6 @@ So, if we start extracting these recurring bits... we might have just discovered
 
 Let's start by extracting `model`, `render()` and `updateModel()` to a separate "framework" file.
 ```js
-// framework.js
-
 class BaseApp {
   constructor() {
     this.model = {};
@@ -151,14 +149,12 @@ class BaseApp {
 export { BaseApp };
 ```
 
-We could also offload some of that `render` logic to the framework. Setting the `innerHTML` of our `rootElement` and adding event listeners "by hand" can get very verbose and bug-prone. It would be a little more elegant if we just returned a "markup string" from our `render` method and the framework took care of the rest. We just have to find a way to declare event listeners directly into that string, and that's really easy with data-attributes, like we did to track todo ids.
+We can also offload some of that `render` logic to the framework. Setting the `innerHTML` of our `rootElement` and adding event listeners "by hand" can get very verbose and bug-prone. It would be a little more elegant if we just returned a "markup string" from our `render` method and the framework took care of the rest. We just have to find a way to declare event listeners directly into that string, and that's really easy with data-attributes (_e.g._ `data-on-click`, `data-on-keypress`, ...).
 ```js
-// framework.js
-
 class BaseApp {
-  constructor(rootSelector) {
+  constructor(rootElement) {
     this.model = {};
-    this.rootElement = document.querySelector(rootSelector);
+    this.rootElement = rootElement;
   }
 
   render() {
@@ -178,7 +174,7 @@ class BaseApp {
         if (!callback) {
           throw new Error(`\`${cbName}\` is not defined`);
         }
-        elem.addEventListener(options.event, callback.bind(this));
+        elem.addEventListener(options.event, callback);
       });
     });
   }
@@ -197,9 +193,26 @@ class BaseApp {
 export default BaseApp;
 ```
 
-```js
-// app.js
+And we can keep adding features to our framework:
+- Bind event listeners automatically:
+  ```js
+  addEventListeners() {
+    ...
+    elem.addEventListener(options.event, callback.bind(this));
+    ...
+  }
+  ```
+- Accept a root CSS selector:
+  ```js
+  constructor(rootSelector) {
+    this.model = {};
+    this.rootElement = document.querySelector(rootSelector);
+  }
+  ```
 
+
+Now the application code can be more compact and simpler to build. On the app side, we no longer need to deal with DOM manipulation and the complex and repetitive parts are handled on the framework side.
+```js
 import 'style.css';
 import BaseApp from './framework';
 
@@ -261,7 +274,6 @@ class TodoApp extends BaseApp {
   }
 
   render() {
-    // re-create DOM from model data
     const todos = this.model.todos.map(todo => {
       const classes = todo.done ? 'todo-item done' : 'todo-item';
       return `
@@ -296,14 +308,6 @@ new TodoApp('#root-2').renderToDOM();
 new TodoApp('#root-3').renderToDOM();
 }
 ```
-
-Now the application code is much more compact. We don't need to deal with DOM manipulation and the complex and repetitive repetitive parts are handled on the framework side.
-
-The framework code is pretty small at the moment, but it's a framework nonetheless. We can enhance it in several ways:
-- Add lifecycle hooks that run before and after render.
-- Implement optimizations to avoid rendering the DOM every time.
-- Provide more helpers to generate the view.
-- ...
 
 And we have to stop here, because you may not realize it, but you just learned now [React](https://reactjs.org/) works.
 
