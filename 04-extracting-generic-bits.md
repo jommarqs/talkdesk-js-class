@@ -207,7 +207,7 @@ And we can keep adding features to our framework:
   }
   ```
 
-Now the application code can be more compact and simpler to build. On the app side, we no longer need to deal with DOM manipulation and the complex and repetitive parts are handled on the framework side.
+Using this tiny framework, we can now build applications following the pattern we've exploring up to this point. All the complicated details about DOM manipulation and event handling are hidden away and the application code can be simple, compact and expressive.
 ```js
 import 'style.css';
 import BaseApp from './framework';
@@ -270,6 +270,7 @@ class TodoApp extends BaseApp {
   }
 
   render() {
+    // re-create DOM from model data
     const todos = this.model.todos.map(todo => {
       const classes = todo.done ? 'todo-item done' : 'todo-item';
       return `
@@ -302,10 +303,9 @@ class TodoApp extends BaseApp {
 new TodoApp('#root').renderToDOM();
 new TodoApp('#root-2').renderToDOM();
 new TodoApp('#root-3').renderToDOM();
-}
 ```
 
-And we must stop here... You may not realize it, but you just learned now [React](https://reactjs.org/) works.
+And we must stop here... You may not realize it, but you just learned now [React](https://reactjs.org/) works and why using a framework is a good idea.
 
 ---
 
