@@ -120,12 +120,9 @@ class TodoApp extends App {
 ```
 
 But we can digg a little further... Our next app may not be a _Todo List_, but we're probably going to follow the same pattern:
-- Think about it in terms of data, events and views.
-- A `model` object.
-- A `render` method.
-- An `updateModel` helper that enforces an _unidirectional data flow_.
-- A `rootElement` in which the view DOM is rendered.
-- Event handlers and bindings.
+- We'll think about it in terms of data, events and views.
+- We'll have a `model` object, a `render` method, an `updateModel` helper and a `rootElement`.
+- We'll define event handlers.
 
 So, if we start extracting these recurring bits... we might have just discovered a framework 🤔.
 
@@ -209,7 +206,6 @@ And we can keep adding features to our framework:
     this.rootElement = document.querySelector(rootSelector);
   }
   ```
-
 
 Now the application code can be more compact and simpler to build. On the app side, we no longer need to deal with DOM manipulation and the complex and repetitive parts are handled on the framework side.
 ```js
@@ -309,7 +305,7 @@ new TodoApp('#root-3').renderToDOM();
 }
 ```
 
-And we have to stop here, because you may not realize it, but you just learned now [React](https://reactjs.org/) works.
+And we must stop here... You may not realize it, but you just learned now [React](https://reactjs.org/) works.
 
 ---
 
