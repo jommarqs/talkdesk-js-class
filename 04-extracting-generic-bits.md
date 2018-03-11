@@ -202,7 +202,7 @@ And we have to stop here, because you may not realize it, but you just learned n
 - Implement "load" and "save" using a [Firebase](https://firebase.google.com/) database.
   - Here's a public one [https://talkdesk-js-class.firebaseio.com/](https://talkdesk-js-class.firebaseio.com/):
   - Choose a unique name for your database location (as long as it ends in .json):
-    - I picked `todos.json`, choose anything else, otherwise you'll be rewriting my stuff.
+    - I picked `todos.json`, choose anything else, otherwise you'll be writing over my stuff.
   - Use it like this:
     ```js
     // load
