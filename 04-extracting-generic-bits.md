@@ -12,7 +12,7 @@ updateModel(updated) {
 
 Now we can call this method and skip the explicit calls to `render` in the event handlers.
 ```js
-class TodoApp extends App {
+class TodoApp {
   constructor(rootElement) {
     this.model = {
       todos: [],
