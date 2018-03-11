@@ -131,9 +131,6 @@ new TodoApp(document.getElementById('root-3'));
 ---
 
 ## Exercises
-- Implement _Clear all todos_:
-  - Add a "clear" button or icon.
-  - On click, all the existing todos should be removed.
 - Make the title of each todo app customizable:
   - So we can do something like `new TodoApp(root, 'JavaScript Todos')`.
 
