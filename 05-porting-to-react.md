@@ -35,10 +35,10 @@
     ```
 
 ### 2. Implement filters for your todos.
-    - Add "all", "todo" and "done" filters so you can show only a partial list of all todos:
-        - "all" shows all the todo items.
-        - "todo" shows items not completed.
-        - "done" shows completed items.
+  - Add "all", "todo" and "done" filters so you can show only a partial list of all todos:
+      - "all" shows all the todo items.
+      - "todo" shows items not completed.
+      - "done" shows completed items.
   - Here a bit of markup which already has some CSS for it:
     ```html
     <div className="filters">
