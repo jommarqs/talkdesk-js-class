@@ -207,7 +207,7 @@ And we can keep adding features to our framework:
   }
   ```
 
-Using this tiny framework, we can now build applications following the pattern we've exploring up to this point. Just by extending `BaseApp`, all the complicated details about DOM manipulation and event handling are hidden away and the application code can be simple, compact and expressive.
+Using this tiny framework, we can now build applications following the patterns we've been exploring up to this point. Just by extending `BaseApp`, all the complicated details about DOM manipulation and event handling are hidden away and the application code can be simple, compact and expressive.
 ```js
 import 'style.css';
 import BaseApp from './framework';
@@ -270,7 +270,6 @@ class TodoApp extends BaseApp {
   }
 
   render() {
-    // re-create DOM from model data
     const todos = this.model.todos.map(todo => {
       const classes = todo.done ? 'todo-item done' : 'todo-item';
       return `
