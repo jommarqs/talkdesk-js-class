@@ -36,15 +36,12 @@
     fetch('https://talkdesk-js-class.firebaseio.com/todos.json')
       .then(response => response.json())
       .then(data => data || {})
-      .then(data => {
-      /* do domething with your data */
-        console.log(data);
-      });
+      .then(data => this.setState(data));
 
     // save
     fetch(
       'https://talkdesk-js-class.firebaseio.com/todos.json',
-      { method: 'PUT', body: JSON.stringify(this.model) }
+      { method: 'PUT', body: JSON.stringify(this.state) }
     );
   - In the markup, it may be a good idea to add these new actions to the options section created earlier:
     ```html
