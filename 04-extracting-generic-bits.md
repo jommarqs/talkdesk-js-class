@@ -318,8 +318,11 @@ And we must stop here... You may not realize it, but you just learned now [React
     // load
     fetch('https://talkdesk-js-class.firebaseio.com/todos.json')
       .then(response => response.json())
-      .then(data => data || {});
-      .then(data => this.updateModel(data));
+      .then(data => data || {})
+      .then(data => {
+      /* do domething with your data */
+        console.log(data);
+      });
 
     // save
     fetch(
